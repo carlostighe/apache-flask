@@ -14,3 +14,7 @@ As of [commit f232e60c39fcd480fbabab6308eeaf24f4a9d5ae](https://github.com/Craic
 The command to run the `Dockerfile` is:
 
 `docker run -d -p 80:80 --name <name> apache-flask`
+
+
+a2dissite 000-default.conf
+a2ensite apache-flask.conf
