@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y apache2 \
     python \
     python-dev\
     python-pip \
+    vim \
  && apt-get clean \
  && apt-get autoremove \
  && rm -rf /var/lib/apt/lists/*
@@ -38,8 +39,8 @@ EXPOSE 80
 
 WORKDIR /var/www/apache-flask
 
-
-CMD  /usr/sbin/apache2ctl -D FOREGROUND
+CMD ["/bin/bash"]
+# CMD  /usr/sbin/apache2ctl -D FOREGROUND
 # The commands below get apache running but there are issues accessing it online
 # The port is only available if you go to another port first
 # ENTRYPOINT ["/sbin/init"]
