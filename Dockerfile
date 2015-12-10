@@ -32,13 +32,18 @@ RUN a2enmod headers
 COPY ./apache-flask.wsgi /var/www/apache-flask/apache-flask.wsgi
 
 # Activate the new apache config
-RUN service apache2 reload
+# RUN ["/bin/bash/", "service apache2 reload"]
 
 COPY ./run.py /var/www/apache-flask/run.py
-COPY ./app /var/www/apache-flask/app
+COPY ./app /var/www/apache-flask/app/
 
 EXPOSE 80
 
 WORKDIR /var/www/apache-flask
 
-CMD ["/bin/bash"]
+
+CMD  /usr/sbin/apache2ctl -D FOREGROUND
+# The commands below get apache running but there are issues accessing it online
+# The port is only available if you go to another port first
+# ENTRYPOINT ["/sbin/init"]
+# CMD ["/usr/sbin/apache2ctl"]
