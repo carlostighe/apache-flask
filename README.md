@@ -10,7 +10,7 @@ It will contain a demo app written using the Flask framework
 
 I will be using [this Flask app](http://code.tutsplus.com/tutorials/an-introduction-to-pythons-flask-framework--net-28822) for the repo
 
-As of commit f232e60c39fcd480fbabab6308eeaf24f4a9d5ae
+As of [commit f232e60c39fcd480fbabab6308eeaf24f4a9d5ae](https://github.com/Craicerjack/apache-flask/tree/f232e60c39fcd480fbabab6308eeaf24f4a9d5ae)
 The command to run the `Dockerfile` is:
 
 `docker run -d -p 80:80 --name <name> apache-flask`

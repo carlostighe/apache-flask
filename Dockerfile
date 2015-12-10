@@ -31,9 +31,6 @@ RUN a2enmod headers
 # Copy over the wsgi file
 COPY ./apache-flask.wsgi /var/www/apache-flask/apache-flask.wsgi
 
-# Activate the new apache config
-# RUN ["/bin/bash/", "service apache2 reload"]
-
 COPY ./run.py /var/www/apache-flask/run.py
 COPY ./app /var/www/apache-flask/app/
 
