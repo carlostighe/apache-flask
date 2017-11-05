@@ -15,7 +15,7 @@ The command to run the `Dockerfile` is:
 
 `docker run -d -p 80:80 --name <name> apache-flask`
 
-Alternativly, you can use docker-compose with:
+Alternatively, you can use docker-compose with:
 
 `docker-compose up -d`
 
