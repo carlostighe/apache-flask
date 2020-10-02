@@ -38,6 +38,11 @@ COPY ./app /var/www/apache-flask/app/
 RUN a2dissite 000-default.conf
 RUN a2ensite apache-flask.conf
 
+# LINK apache config to docker logs.
+RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
+    ln -sf /proc/self/fd/1 /var/log/apache2/error.log
+
+
 EXPOSE 80
 
 WORKDIR /var/www/apache-flask
